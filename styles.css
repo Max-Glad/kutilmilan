@@ -1,0 +1,102 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#276ef1;
+  --muted:#6b7280;
+  --text:#0f172a;
+  --radius:10px;
+  --container:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+}
+
+.site-header{
+  background:linear-gradient(90deg,rgba(39,110,241,0.06),transparent);
+  border-bottom:1px solid rgba(15,23,42,0.04);
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  margin:0;
+  font-size:1.15rem;
+  letter-spacing:0.2px;
+}
+.nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+  font-size:0.95rem;
+}
+.nav a:hover{color:var(--accent)}
+
+.hero{
+  padding:64px 0;
+  text-align:center;
+}
+.hero h2{font-size:2rem;margin:0 0 12px}
+.hero p{color:var(--muted);margin:0 0 18px}
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
+
+.about, .projects, .contact{
+  background:transparent;
+  padding:36px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+}
+.card h4{margin:0 0 8px}
+.card p{margin:0;color:var(--muted)}
+
+.site-footer{
+  padding:18px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+  border-top:1px solid rgba(15,23,42,0.04);
+  background:transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .site-header .container{flex-direction:column;gap:12px;align-items:flex-start}
+  .nav{display:flex;flex-wrap:wrap}
+  .hero{padding:40px 12px}
+}
